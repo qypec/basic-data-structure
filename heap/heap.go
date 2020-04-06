@@ -18,18 +18,23 @@ type element struct {
 	value interface{}
 }
 
+func New(heapType int) *Heap { return new(Heap).Init(heapType) }
+
 func NewElement(index, priority int, value interface{}) element {
 	return element{index, priority, value}
 }
 
 // Builds a min-heap from a priority array.
 // The value of the element with priority[i] is equal to values[i]
+// Complexity: n
+// size of priority and values must be equals
 func BuildMinHeap(priority []int, values []interface{}) *Heap {
 	var h Heap
 
 	h.Init(MinHeap)
 	for i := 0; i < len(priority); i++ {
 		h.arr = append(h.arr, element{i + 1, priority[i], values[i]})
+		h.size++
 	}
 	h.heapify()
 	return &h
@@ -37,12 +42,15 @@ func BuildMinHeap(priority []int, values []interface{}) *Heap {
 
 // Builds a max-heap from a priority array.
 // The value of the element with priority[i] is equal to values[i]
+// Complexity: n
+// size of priority and values must be equals
 func BuildMaxHeap(priority []int, values []interface{}) *Heap {
 	var h Heap
 
 	h.Init(MaxHeap)
 	for i := 0; i < len(priority); i++ {
 		h.arr = append(h.arr, element{i + 1, priority[i], values[i]})
+		h.size++
 	}
 	h.heapify()
 	return &h
@@ -68,11 +76,12 @@ func (h Heap) Front() *element {
 }
 
 // initializes a heap of size 0.
-func (h *Heap) Init(heapType int) {
+func (h *Heap) Init(heapType int) *Heap {
 	h.arr = make([]element, 1)
 	h.arr[0] = element{0, 0, nil}
 	h.size = 0
 	h.kind = heapType
+	return h
 }
 
 // adds a new item with priority and value
@@ -106,7 +115,7 @@ func (h *Heap) ExtractMin() (interface{}, int) {
 
 	if h.kind == MaxHeap {
 		min = *h.Front()
-		for i := int(math.Ceil(float64(h.size / 2))); i <= h.size; i++ {
+		for i := int(math.Ceil(float64((h.size) / 2) + 0.1)); i <= h.size; i++ {
 			if h.arr[i].priority < min.priority {
 				min = h.arr[i]
 			}
