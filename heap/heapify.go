@@ -1,7 +1,5 @@
 package heap
 
-import "math"
-
 func outOfRange(x, l, r int) bool {
 	if x >= l && x <= r {
 		return false
@@ -11,14 +9,8 @@ func outOfRange(x, l, r int) bool {
 
 // normalizes a heap. Element order respects heap properties
 func (h *Heap) heapify() {
-	if h.kind == MinHeap {
-		for i := int(h.size / 2); i > 0; i-- {
-			h.siftingDown(i)
-		}
-	} else {
-		for i := int(math.Ceil(float64(h.size / 2))); i <= h.size; i++ {
-			h.siftingUp(i)
-		}
+	for i := int(h.size / 2); i > 0; i-- {
+		h.siftingDown(i)
 	}
 }
 
