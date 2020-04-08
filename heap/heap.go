@@ -115,7 +115,7 @@ func (h *Heap) ExtractMin() (interface{}, int) {
 
 	if h.kind == MaxHeap {
 		min = *h.Front()
-		for i := int(math.Ceil(float64((h.size) / 2) + 0.1)); i <= h.size; i++ {
+		for i := int(math.Ceil(float64((h.size)/2) + 0.1)); i <= h.size; i++ {
 			if h.arr[i].priority < min.priority {
 				min = h.arr[i]
 			}
@@ -169,3 +169,5 @@ func (h *Heap) ExtractMax() (interface{}, int) {
 
 	return max.value, max.priority
 }
+
+

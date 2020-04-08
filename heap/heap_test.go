@@ -249,7 +249,6 @@ func TestBuildMinHeap(t *testing.T) {
 	}
 }
 
-
 // ATTENTION!!!!
 // Actual and expected in require are mixed up
 // The author is squinting
@@ -290,7 +289,6 @@ func TestInsert(t *testing.T) {
 	require.Equal(t,
 		[]interface{}{heap.arr[0].value, heap.arr[1].value, heap.arr[2].value, heap.arr[3].value},
 		[]interface{}{nil, nil, 42, "string"}, fmt.Sprintf("MinHeap 03\n"))
-
 
 	heap = New(MaxHeap)
 
