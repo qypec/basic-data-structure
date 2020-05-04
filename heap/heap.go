@@ -15,7 +15,7 @@ type element struct {
 	index    int
 	priority int
 
-	value interface{}
+	Value interface{}
 }
 
 func New(heapType int) *Heap { return new(Heap).Init(heapType) }
@@ -128,7 +128,7 @@ func (h *Heap) ExtractMin() (interface{}, int) {
 		h.siftingUp(min.index)
 	}
 
-	return min.value, min.priority
+	return min.Value, min.priority
 }
 
 // returns the value and priority of max element
@@ -167,7 +167,7 @@ func (h *Heap) ExtractMax() (interface{}, int) {
 		h.siftingUp(max.index)
 	}
 
-	return max.value, max.priority
+	return max.Value, max.priority
 }
 
 

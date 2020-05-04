@@ -263,7 +263,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MinHeap 01\n"))
 	require.Equal(t, heap.size, 1, fmt.Sprintf("MinHeap 01\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value},
 		[]interface{}{nil, "string"},
 		fmt.Sprintf("MinHeap 01\n"))
 
@@ -275,7 +275,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MinHeap 02\n"))
 	require.Equal(t, heap.size, 2, fmt.Sprintf("MinHeap 02\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value, heap.arr[2].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value, heap.arr[2].Value},
 		[]interface{}{nil, "string", 42},
 		fmt.Sprintf("MinHeap 02\n"))
 
@@ -287,7 +287,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MinHeap 03\n"))
 	require.Equal(t, heap.size, 3, fmt.Sprintf("MinHeap 03\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value, heap.arr[2].value, heap.arr[3].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value, heap.arr[2].Value, heap.arr[3].Value},
 		[]interface{}{nil, nil, 42, "string"}, fmt.Sprintf("MinHeap 03\n"))
 
 	heap = New(MaxHeap)
@@ -300,7 +300,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MaxHeap 01\n"))
 	require.Equal(t, heap.size, 1, fmt.Sprintf("MaxHeap 01\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value},
 		[]interface{}{nil, "string"},
 		fmt.Sprintf("MaxHeap 01\n"))
 
@@ -312,7 +312,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MaxHeap 02\n"))
 	require.Equal(t, heap.size, 2, fmt.Sprintf("MaxHeap 02\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value, heap.arr[2].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value, heap.arr[2].Value},
 		[]interface{}{nil, 42, "string"},
 		fmt.Sprintf("MaxHeap 02\n"))
 
@@ -324,7 +324,7 @@ func TestInsert(t *testing.T) {
 		fmt.Sprintf("MaxHeap 03\n"))
 	require.Equal(t, heap.size, 3, fmt.Sprintf("MaxHeap 03\n"))
 	require.Equal(t,
-		[]interface{}{heap.arr[0].value, heap.arr[1].value, heap.arr[2].value, heap.arr[3].value},
+		[]interface{}{heap.arr[0].Value, heap.arr[1].Value, heap.arr[2].Value, heap.arr[3].Value},
 		[]interface{}{nil, 42, "string", nil}, fmt.Sprintf("MaxHeap 03\n"))
 }
 
